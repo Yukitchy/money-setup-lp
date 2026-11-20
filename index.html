@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIお金管理セットアップ｜請求書と収支を、ひとつに</title>
+<meta name="description" content="フリーランス・副業の請求書と収支を、AIと一緒に一か所へ。導入支援、請求書の台帳化、月次収支ビュー、確定申告の準備まで伴走するセットアップ支援サービス。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AIお金管理セットアップ｜請求書と収支を、ひとつに">
+<meta property="og:description" content="フリーランス・副業の請求書と収支を、AIと一緒に一か所へ。導入支援、請求書の台帳化、月次収支ビュー、確定申告の準備まで。">
+<meta property="og:url" content="https://yukitchy.github.io/money-setup-lp/">
+<meta property="og:image" content="https://yukitchy.github.io/money-setup-lp/og-1.jpg">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+  :root{
+    --ink:#1c1f1d;
+    --sub:#5a605b;
+    --paper:#fbfaf6;
+    --card:#ffffff;
+    --line:#ddd8cc;
+    --accent:#1e5240;
+    --accent-soft:#e9f0ec;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans CJK JP",sans-serif;
+    font-size:16px;
+    line-height:1.9;
+    letter-spacing:.02em;
+  }
+  .serif{font-family:"Hiragino Mincho ProN","Hiragino Mincho Pro","YuMincho","Yu Mincho","Noto Serif CJK JP",serif;}
+  .wrap{max-width:680px;margin:0 auto;padding:0 20px;}
+  header{padding:22px 0 0;}
+  .brand{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:12px;}
+  .brand .name{font-size:15px;font-weight:700;letter-spacing:.08em;}
+  .brand .tag{font-size:11px;color:var(--sub);letter-spacing:.14em;}
+  .hero{padding:52px 0 44px;border-bottom:1px solid var(--line);}
+  .kicker{font-size:12px;letter-spacing:.22em;color:var(--accent);font-weight:700;margin-bottom:18px;}
+  h1{font-size:clamp(23px,6.4vw,32px);line-height:1.45;font-weight:700;letter-spacing:.04em;margin-bottom:22px;}
+  .hero p{color:#333733;font-size:16px;}
+  .hero p + p{margin-top:14px;}
+  section{padding:46px 0;border-bottom:1px solid var(--line);}
+  .sec-label{font-size:11px;letter-spacing:.24em;color:var(--accent);font-weight:700;margin-bottom:10px;}
+  h2{font-size:clamp(18px,5.2vw,22px);line-height:1.5;font-weight:700;letter-spacing:.05em;margin-bottom:24px;}
+  .pains{list-style:none;}
+  .pains li{background:var(--card);border:1px solid var(--line);padding:16px 18px 16px 46px;position:relative;font-size:15px;line-height:1.75;}
+  .pains li + li{margin-top:10px;}
+  .pains li::before{content:"";position:absolute;left:18px;top:26px;width:14px;height:8px;border-left:3px solid var(--accent);border-bottom:3px solid var(--accent);transform:rotate(-45deg);}
+  .svc{display:grid;gap:14px;}
+  .svc article{background:var(--card);border:1px solid var(--line);padding:22px 20px;}
+  .svc .no{font-size:12px;color:var(--accent);letter-spacing:.2em;font-weight:700;}
+  .svc h3{font-size:17px;margin:6px 0 8px;letter-spacing:.04em;}
+  .svc p{font-size:14.5px;color:#333733;line-height:1.85;}
+  .steps{list-style:none;counter-reset:step;}
+  .steps li{display:flex;gap:18px;padding:18px 0;border-top:1px solid var(--line);}
+  .steps li:first-child{border-top:none;padding-top:2px;}
+  .steps .num{font-size:30px;line-height:1;color:var(--accent);min-width:44px;}
+  .steps h3{font-size:16px;letter-spacing:.04em;margin-bottom:4px;}
+  .steps p{font-size:14.5px;color:#333733;line-height:1.85;}
+  .proof{background:var(--accent-soft);border:1px solid var(--line);padding:22px 20px;}
+  .proof + .proof{margin-top:14px;background:var(--card);}
+  .proof h3{font-size:16px;letter-spacing:.04em;margin-bottom:8px;}
+  .proof p{font-size:14.5px;color:#333733;line-height:1.85;}
+  table.view{width:100%;border-collapse:collapse;margin-top:18px;font-size:13.5px;background:var(--card);}
+  table.view th,table.view td{border:1px solid var(--line);padding:8px 6px;text-align:center;}
+  table.view th{background:var(--accent);color:#fff;font-weight:700;letter-spacing:.06em;}
+  table.view td:first-child{font-weight:700;}
+  .view-note{font-size:12px;color:var(--sub);margin-top:8px;}
+  .faq details{border-top:1px solid var(--line);padding:16px 0;}
+  .faq details:last-child{border-bottom:1px solid var(--line);}
+  .faq summary{font-weight:700;font-size:15.5px;cursor:pointer;letter-spacing:.03em;list-style:none;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::before{content:"Q　";color:var(--accent);}
+  .faq p{font-size:14.5px;color:#333733;margin-top:8px;line-height:1.85;}
+  .cta{padding:52px 0 60px;text-align:left;}
+  .cta h2{margin-bottom:14px;}
+  .cta p{font-size:15px;color:#333733;}
+  .cta-box{margin-top:24px;border:2px solid var(--ink);background:var(--card);padding:22px 20px;}
+  .cta-box .big{font-size:18px;font-weight:700;letter-spacing:.05em;margin-bottom:6px;}
+  .cta-box p{font-size:13.5px;color:var(--sub);}
+  footer{padding:26px 0 40px;font-size:12px;color:var(--sub);}
+  footer .fname{color:var(--ink);font-weight:700;font-size:13px;margin-bottom:4px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="brand">
+    <div class="name">AIお金管理セットアップ</div>
+    <div class="tag">FREELANCE MONEY SETUP</div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="kicker">フリーランス・副業のための</div>
+  <h1 class="serif">請求書と収支を、ひとつに。</h1>
+  <p>仕事のたびに作る請求書が、チャットやメールの中に散らばっている。収入は給料、副業、プラットフォームからバラバラに入ってくる。だから「いくら稼いで、いくら使っているか」が、いつも分からない。</p>
+  <p>このサービスは、AIアシスタントの導入から、過去の請求書の台帳化、毎月の収支が見える表づくり、確定申告の準備までを一緒に進める、セットアップ支援です。仕組みができれば、あとは月に一度眺めるだけになります。</p>
+</div>
+
+<section>
+  <div class="sec-label">CHECK</div>
+  <h2 class="serif">こんな状態になっていませんか</h2>
+  <ul class="pains">
+    <li>請求書を作るたびに、過去のチャットやメールを探し回っている</li>
+    <li>AIにその場で作ってもらった請求書が、どこに何枚あるか把握できていない</li>
+    <li>収入が複数の口から入り、年間の合計を聞かれても答えられない</li>
+    <li>「いくら稼いで、いくら使っているか」が分からず、貯金の計画が立てられない</li>
+    <li>確定申告が要るのかどうか自体が分からず、時期が来るたびに焦る</li>
+  </ul>
+</section>
+
+<section>
+  <div class="sec-label">SERVICE</div>
+  <h2 class="serif">サービスでできること</h2>
+  <div class="svc">
+    <article>
+      <div class="no">01</div>
+      <h3>AIアシスタント導入支援</h3>
+      <p>Muse などのAIアシスタントを導入し、仕事ごとに部屋（プロジェクト）を分ける設計まで一緒に行います。最初に「AIに渡してよい情報・渡さない情報」の線引きを決めるので、安心して使い始められます。</p>
+    </article>
+    <article>
+      <div class="no">02</div>
+      <h3>請求書の台帳化</h3>
+      <p>チャットやメールに散らばった過去の請求書を全部回収し、ファイル名を揃えて1か所に集約。日付・仕事先・金額・入金済みかどうかを1行ずつ書く「請求書台帳」を作ります。今後は「作ったら台帳に1行」のルールで、二度と散らばりません。</p>
+    </article>
+    <article>
+      <div class="no">03</div>
+      <h3>月次収支ビュー</h3>
+      <p>給料・副収入・支出を月ごとに並べた表を作り、「今月いくら残ったか」が一目で分かる状態にします。見込み収入も並ぶので、貯金や大きな買い物の計画が立てられます。</p>
+      <table class="view">
+        <tr><th>月</th><th>給料</th><th>副収入</th><th>収入合計</th><th>支出</th><th>残り</th></tr>
+        <tr><td>1月</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td>2月</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+      </table>
+      <div class="view-note">月次収支ビューの形（列構成のサンプル）</div>
+    </article>
+    <article>
+      <div class="no">04</div>
+      <h3>確定申告の準備サポート</h3>
+      <p>副収入の年間合計を出し、「申告が必要かどうか」の目安を確認します。レシートや証憑の整理、プラットフォームごとの売上集計など、申告書づくりに進める状態まで伴走します。</p>
+    </article>
+  </div>
+</section>
+
+<section>
+  <div class="sec-label">FLOW</div>
+  <h2 class="serif">進め方</h2>
+  <ol class="steps">
+    <li>
+      <div class="num serif">1</div>
+      <div>
+        <h3>相談・現状ヒアリング</h3>
+        <p>いま請求書がどこにあり、収入がどこから入っているかを一緒に棚卸しします。「どこにあるか分からない」状態からの相談で大丈夫です。</p>
+      </div>
+    </li>
+    <li>
+      <div class="num serif">2</div>
+      <div>
+        <h3>導入と、情報の線引き</h3>
+        <p>AIアシスタントを導入し、プロジェクト分けの設計と、渡す情報の範囲（金額だけ／明細まで／パスワード類は渡さない）を決めます。</p>
+      </div>
+    </li>
+    <li>
+      <div class="num serif">3</div>
+      <div>
+        <h3>過去分の回収と台帳化</h3>
+        <p>散らばった請求書を集めて台帳に寄せ、今年の副収入の合計を出します。ここで全体像が初めて見えます。</p>
+      </div>
+    </li>
+    <li>
+      <div class="num serif">4</div>
+      <div>
+        <h3>月次ビューの運用開始</h3>
+        <p>「請求書を作ったら台帳に1行」「月に一度、収支ビューを眺める」の2つの習慣だけが残ります。</p>
+      </div>
+    </li>
+    <li>
+      <div class="num serif">5</div>
+      <div>
+        <h3>申告シーズンへの準備</h3>
+        <p>証憑と集計が揃った状態で申告期を迎えます。必要に応じて、税理士に渡せる形への整理もお手伝いします。</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <div class="sec-label">PROOF</div>
+  <h2 class="serif">提供者自身の仕組みから</h2>
+  <div class="proof">
+    <h3>レシート仕分けカメラ（自作・運用中）</h3>
+    <p>提供者自身の確定申告のために作った仕組みです。レシートをスマホで撮るとAIが内容を読み取って分類し、会計ソフト（freee／マネーフォワード）へ取り込める形式で書き出します。自分の申告準備で実際に使い続けている道具を、考え方ごとお渡しします。</p>
+  </div>
+  <div class="proof">
+    <h3>複数の仕事を、1つの台帳で</h3>
+    <p>提供者はツアーガイド、語学レッスン、業務委託など複数の収入源を持ち、請求はすべて1つの台帳で管理しています。未請求や期限を過ぎた請求がないか、毎週チェックする仕組みまで含めて運用中です。この台帳運用の型が、そのままサービスの土台になっています。</p>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="sec-label">FAQ</div>
+  <h2 class="serif">よくある質問</h2>
+  <details>
+    <summary>パソコンやAIが苦手でも大丈夫ですか</summary>
+    <p>大丈夫です。スマホ中心でも始められます。導入は画面を見ながら一緒に進め、「次に何をすればいいか」が分かる状態までをゴールにします。</p>
+  </details>
+  <details>
+    <summary>収入や家計をAIに見せるのが不安です</summary>
+    <p>最初のステップで「渡してよい情報・渡さない情報」の線引きを一緒に決めます。金額だけから始める方法もあります。銀行やカードのパスワード、ログイン情報は、AIにも誰にも渡さないのが鉄則です。</p>
+  </details>
+  <details>
+    <summary>税理士にお願いするのと何が違いますか</summary>
+    <p>このサービスは税理士業務ではありません。申告書の作成や提出の代行は行いません。日々の記録と証憑を整え、「自分で申告に進める状態」「税理士にそのまま渡せる状態」を作るための仕組みづくりです。</p>
+  </details>
+  <details>
+    <summary>料金はどのくらいですか</summary>
+    <p>現状の散らかり具合と、どこまで伴走するかで変わるため、ヒアリングのうえ個別にご案内します。まずは相談からお気軽にどうぞ。</p>
+  </details>
+  <details>
+    <summary>どこで受けられますか</summary>
+    <p>オンライン（ビデオ通話）での実施が中心です。東京近郊の方は、対面での実施もご相談いただけます。</p>
+  </details>
+</section>
+
+<div class="cta">
+  <div class="sec-label">CONTACT</div>
+  <h2 class="serif">まずは相談から</h2>
+  <p>請求書がどこにあるか分からない、収入の合計が出せない。その状態のまま相談に来てください。棚卸しから一緒に始めます。</p>
+  <div class="cta-box">
+    <div class="big">お問い合わせ窓口は準備中です</div>
+    <p>相談フォームの公開まで、今しばらくお待ちください。公開次第、このページからお申し込みいただけるようになります。</p>
+  </div>
+</div>
+
+<footer>
+  <div class="fname">AIお金管理セットアップ</div>
+  <div>提供：市原佑樹（Anime Sensei）｜東京を拠点に、ツアーガイド・語学レッスン・AI活用支援を行っています。</div>
+</footer>
+
+</div>
+</body>
+</html>
