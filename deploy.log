@@ -1,1 +1,15 @@
 === deploy start 2026年 11月20日 金曜日 10時51分57秒 JST ===
+[main db10ace] AI money setup LP: initial publish
+ 6 files changed, 4 insertions(+), 2 deletions(-)
+ delete mode 100644 cdp320.png
+ delete mode 100644 cdp390.png
+ delete mode 100644 shot320.png
+ delete mode 100644 shot390.png
+To https://github.com/Yukitchy/money-setup-lp.git
+   15a031b..db10ace  main -> main
+branch 'main' set up to track 'origin/main'.
+--- enable pages ---
+{"message":"GitHub Pages is already enabled.","documentation_url":"https://docs.github.com/rest/pages/pages#create-a-apiname-pages-site","status":"409"}gh: GitHub Pages is already enabled. (HTTP 409)
+(pages api returned non-zero; may already be enabled)
+{"url":"https://api.github.com/repos/Yukitchy/money-setup-lp/pages","status":"building","cname":null,"custom_404":false,"html_url":"https://yukitchy.github.io/money-setup-lp/","build_type":"legacy","source":{"branch":"main","path":"/"},"public":true,"protected_domain_state":null,"pending_domain_unverified_at":null,"https_enforced":true}
+=== deploy end 2026年 11月20日 金曜日 10時51分59秒 JST ===
